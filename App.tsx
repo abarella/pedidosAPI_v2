@@ -78,15 +78,17 @@ function App() {
       <Text style={styles.title}>Produção de Hoje</Text>
       <View style={styles.headerRow}>
         <Text style={styles.headerCell}>ID</Text>
+        <Text style={styles.headerCell}>Produto</Text>
         <Text style={styles.headerCell}>Lote</Text>
         <Text style={styles.headerCell}>Série</Text>
         <Text style={styles.headerCell}>Qtde</Text>
       </View>
       <FlatList
         data={data}
-        keyExtractor={(item) => item.p110prod.toString()}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <View style={styles.row}>
+            <Text style={styles.cell}>{item.id}</Text>
             <Text style={styles.cell}>{item.p110prod}</Text>
             <Text style={styles.cell}>{item.p110lote}</Text>
             <Text style={styles.cell}>{item.p110serie}</Text>
