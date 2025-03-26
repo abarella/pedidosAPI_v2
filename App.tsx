@@ -2,13 +2,30 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, ActivityIndicator, StyleSheet } from 'react-native';
 
 function App() {
-  const [data, setData] = useState([]);
-  const [data2, setData2] = useState([]);
-  const [data3, setData3] = useState([]);
+  interface Pedido {
+    id: number;
+    p110prod: string;
+    p110lote: string;
+    p110serie: string;
+    regs: number;
+  }
+  
+  interface NF {
+    nNf: string;
+    emissor: string;
+    tentativas: number;
+    p110chve: string;
+    p110serie: string;
+  }
+
+  const [data, setData] = useState<Pedido[]>([]);
+  const [data2, setData2] = useState<Pedido[]>([]);
+  const [data3, setData3] = useState<NF[]>([]);
 
   const [loading, setLoading] = useState(true);
   const [loading2, setLoading2] = useState(true);
   const [loading3, setLoading3] = useState(true);
+
 
   useEffect(() => {
     const fetchData = async () => {
