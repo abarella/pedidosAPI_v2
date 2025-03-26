@@ -136,6 +136,7 @@ function App() {
 
     <Text style={styles.title}>NFs Agora</Text>
       <View style={styles.headerRow}>
+        <Text style={styles.headerCell}>NF</Text>
         <Text style={styles.headerCell}>Emissor</Text>
         <Text style={styles.headerCell}>Tentativas</Text>
         <Text style={styles.headerCell}>Chave</Text>
@@ -146,6 +147,7 @@ function App() {
         keyExtractor={(item) => item.nNf}
         renderItem={({ item }) => (
           <View style={styles.row}>
+            <Text style={styles.cell}>{item.nNf}</Text>
             <Text style={styles.cell}>{item.emissor}</Text>
             <Text style={styles.cell}>{item.tentativas}</Text>
             <Text style={styles.cell}>{item.p110chve}</Text>
